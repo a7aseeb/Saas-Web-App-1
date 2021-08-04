@@ -1,6 +1,6 @@
 
 
-document.querySelector(".button-container").addEventListener("click", () => {
+document.querySelector(".button-container").addEventListener("click touchstart", () => {
     let text = document.getElementById("filter-jobs").value;
     getJobs().then(jobs => {
         let filteredJobs =  filterJobs(jobs, text);
