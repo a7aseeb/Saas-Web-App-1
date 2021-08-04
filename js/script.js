@@ -5,7 +5,16 @@ document.querySelector(".button-container").addEventListener("click", () => {
     getJobs().then(jobs => {
         let filteredJobs =  filterJobs(jobs, text);
         showJobs(filteredJobs);
+        document.getElementById("no-jobs").innerHTML = `<h1 id="no-jobs">Showing ${filteredJobs.length} Jobs</h1>`
     })
+})
+
+window.addEventListener("load", () => {
+    getJobs().then(jobs => {
+        let countJobs =  jobs.length;
+        document.getElementById("no-jobs").innerHTML = `<h1 id="no-jobs">Showing ${countJobs} Jobs</h1>`;
+    })
+    
 })
 
 function getJobs(){
@@ -66,3 +75,4 @@ function showJobs(jobs){
 getJobs().then(data => {
     showJobs(data);
 });
+
