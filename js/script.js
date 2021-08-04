@@ -1,5 +1,13 @@
 
 
+function handleInteraction(evt) {
+    evt.preventDefault()
+    console.log('interacted')
+  }
+
+el.addEventListener('touchstart', handleInteraction)
+el.addEventListener('click', handleInteraction)
+
 document.querySelector(".button-container").addEventListener("click", () => {
     let text = document.getElementById("filter-jobs").value;
     getJobs().then(jobs => {
